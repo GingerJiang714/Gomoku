@@ -159,11 +159,12 @@ class BoardView: UIView {
     
     func undo() {
         allchessview.popLast()?.isHidden = true
+        update_turn()
         var lastaction: (Int, Int)
         lastaction = (allchessposition.popLast())!
         blackorwhite = chessarray[lastaction.0][lastaction.1]
         chessarray[lastaction.0][lastaction.1] = 0
-        update_turn()
+        
     }
 
     override func layoutSubviews() {
