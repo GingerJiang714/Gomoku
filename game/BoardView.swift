@@ -162,7 +162,8 @@ class BoardView: UIView {
         var lastaction: (Int, Int)
         lastaction = (allchessposition.popLast())!
         blackorwhite = chessarray[lastaction.0][lastaction.1]
-        chessarray[lastaction.0][lastaction.1] = 0        
+        chessarray[lastaction.0][lastaction.1] = 0
+        update_turn()
     }
 
     override func layoutSubviews() {
